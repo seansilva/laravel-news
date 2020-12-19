@@ -17,7 +17,8 @@ class CategoryApiController extends Controller
         return CategoryResource::collection($categories);
     }
 
-    public function posts($id){
+    public function posts($id)
+    {
         $posts = Post::where('category_id', $id)->orderBy('id', 'desc')->paginate();
         return PostResource::collection($posts);
     }
